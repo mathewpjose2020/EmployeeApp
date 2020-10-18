@@ -1,0 +1,130 @@
+<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+
+<!-- <form #employeeForm="ngForm" (ngSubmit)="loginEmployee()">
+
+    <div class="panel panel-primary col-md-6 col-md-offset-3" >
+      <div class="panel-heading">
+        <h3 class="panel-title">{{panelTitle}}</h3>
+      </div>
+      <div class="panel-body">
+  
+        <div class="form-group" [class.has-error]="name.invalid && name.touched"
+         [class.has-success]="name.valid">
+          <label for="name" class="control-label">Name</label>
+          <input required id="name" name="name" [(ngModel)]="employee.name"
+           type="text" class="form-control" #name="ngModel">
+          <span class="help-block" *ngIf="name.invalid && name.touched">
+            Name is required
+          </span>
+        </div>
+
+        <div class="form-group" [class.has-error]="password.invalid && password.touched"
+         [class.has-success]="password.valid">
+          <label for="password" class="control-label">Password</label>
+          <input required id="password" name="password" [(ngModel)]="employee.password"
+           type="text" class="form-control" #password="ngModel">
+          <span class="help-block" *ngIf="password.invalid && password.touched">
+            Password is required
+          </span>
+        </div>
+  
+        
+        
+      </div>
+  
+      <div class="panel-footer">
+        <button type="submit" class="btn btn-primary"
+         [disabled]="employeeForm.invalid">Login</button>
+      </div>
+    </div>
+    
+  </form>
+   -->
+
+   <!DOCTYPE html>
+<html>
+    
+<head>
+	<title>My Awesome Login Page</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+</head>
+<!--Coded with love by Mutiullah Samim-->
+<body>
+	<div class="container">
+		<div class="d-flex justify-content-center">
+			<div class="user_card">
+				<div class="d-flex justify-content-center">
+					<div class="brand_logo_container">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANsAAADnCAMAAACg5dOkAAAA8FBMVEX///+mEg3dGxazs7Py8vKlAADcAACiEQzcIBywsLCxsbGtra2ztbW0uLi0u7vgAADz9/fy7++mDQbz/PzNzc35+fnh4eHeFhDb29u6urrBwcHHx8fo6OjT09OwmpqpSEaypqateHfsxcTiZ2WqW1qpT03x6ennmpmscG+oQD6rYWCuh4fIeXixnZ2tfXyrZ2anMS+nJiPEhYTVRkPAj4/TUE7rubjmi4ru1tbNZmTRV1W8m5qpREKvkZCmHBjId3bQXVzaLCnjcW/gUlC/kpLprazYODXnlpXkfXzLb27XPjvtzc2oNjTDh4bOY2LiYF9mS2YkAAAR3ElEQVR4nN2d/V8TRxDGCXcXueTuDAkQXpUqqIAIvlStAlWrtgpt////pveS3M7ezuzO7m0S6PzafpAvmzzPzDP3srQ0x9rYC+f5z82vNrb7cdxP/n94uzv9uBcUFfe3NtcX/ev4q921eAIW/L/wwr2gD8GmeNsbdxxvfTPpxwqYwFv07+dc65tbJNgUb+dO4hWyqAUrq5fj7S76V7WrQhbNYDXe2p3Ba8oiA68f3wU8XBY5eL211UX/8roqwDSfxSRNEi1ecFubFoMsJmm2//xFL9PixbcSzyCLaRa8en1/HEUPTwL96RVNy23C29DLYpJlbz7cvz9eXrnXiaLo8CT/cGr+91vUk+2u9XWymIN9/Kebg+WVs+V1V/BW12KdLOZfstMfKxVYzVbhHVymJrxF9mQGvS/V4/P97nJdNdstxzN1i5V61EemsFV4xw8yLd4ierINPViSpW9+bYAVNew0Koo6Z7cKz6D3hXp86qpgy913F1ETrsC7Ojs14c2nJxPpAA4mq4fM9uQSYet0hjneMxPezFvOVX0bXKjH75J6SGiPR+lL5VNZ4718tm/Cm13TYmqD06z36uf9LnpkJdv1oHeCHlyN94sBbzY9mUkWKfUQNf45CvvpFXFwU7xzM57fGNAMln1F1UM6treDnO0FfXBTvJsXfROet6bFJItp9vG3ZQNYfmwrozDsB6mBrcI7ehGbBgYPeIZ0QK8e0rE9HZRsz8xwpatfmOehVjGgKR0wqYfEFoYFWxJw2Co8xjzk2JOZZDFXj7/16iGhvRuUbEF6xoTjDgzWMWC4R4emFViuHmywgu1JdW5B0mezTfAu9Xh2PZlRFnnqIaF9GU3YgvTABo41MLB7MrMs7v9gqYfE9n4wZUv27diYeOaezBSapln8nKseoMZ/lMdWsgXZoTUcbx7q9/bIGNCQDuRgiYV6SMf2qDy2sPy7JacObB3ePIT3ZKtrPYMsZl8/OIHlx/a5OraKLciO3OBY85DSchr1vlCPsRtYcWzfBpAtwUcdVnHmIdC0MGTRQT0ktgnahC3IznUdMwPPOA8VeDmZESx+/r0NWI72Z4Mt0Yw6XLxzE14/XFrva/57oR7NQMeBbTWU2YJMO+qw8bTzUD//SJJsbdRDQvtr1GQzjjpcPM08FOdsBFiuHv+4q4fE9j5ssgVpp/XBlRXR89BWzraNghWBTqsvmUD7d4Sw/eLj4KZ4FyfqPNTbydnWegrYflv1kNiuBypbknhj64h5SPpI7uVsm5JMYnFwqxp/F8cm2JgzqhWePA/Fm0VvDNimyySPVcQkCFvS88s2wbsUbEXnvAuE0hjoWNd4GRwbYAvSY+9wBd6L6cn1i8YrFGzpfb9gy5OYBGNzGHU4cJc1W9l1Cbbss3+2MMTZ3EYdI9t+zVb2k+Cfe+35EzmJSVC2mRxcVIvJVskmDC775J3tCURblyQ5e+gf7l42+eGlvS0t7dQGl/7w5moTtC8jmi154F8qj9Ip21rJtie6hVeexWQSk9RscpuQ3fiGiw6mbKW9QYNLv/plm8YkBFubGZVge1azVanlruiETv2yTWMSgi3IqHWcM9tJLZNVKiQMLul5ZatjEoqt9YyqsDXsTTI4r1pSxyQUW6BfxzmwNextaUmoV/bdpwl0G2jhetBk8zKjAjbRK0/YtgTbrx7ZRExCsgVeR53O8Gpqb8H2hE0YXPaPxw+liEloNr+jjmJvucEJ8/7dHxuISTTnxl3H8diEve1N2MR0mv7tTyhBTEKz2azjGGxNe5MM7qM3NhiTaNjs1nEmttre4ulOBxjcvj+266aSoGzW6zgt2wNpMi1Dc2FwiS82KSbRsfkcdVR7k8x7xRObFJPo2HzOqKq9SQb304/BjZcRtHAdS4Bd13FqAXvbqtnAdPrBD5sck0xrgJ1bi3Vco4C97dRsIn7NfvMUJiNk4eC61mjp4HyNOoi9SQb33IuYdN8hShKOvkQYW8t1HGBT7U2aTt/4YXuCoIVPutEL9OA8jTqIvS0trQqD82Le3cfYsQ2edodX+MH5mVERe4MG58e8GzHJ9CO5vHJP/GlheRp1MHuTDM4DWzMmmRzb2+7KveHLDGHztI4T3+YYsIGPh4douRmTTI7tj3FxP84lenA+1nGovUkG1z5aVmKSqt53i3sfhufYwXlZx6H2Jhlc+2hZiUmqY/urZKMOzsOMKuyttwfYQPzaPlpWYpKqutU9K9ERenAe1nHA3jYB24bHaFmNSUol+TZhA0otHVz7dRxqb9J02jpaxn179Hk8ZbtAD679qIPamzSdto2WkZikOLZHxUd9cm/fKXZw7UcdYG/SNdr+omUkJimO7V/AdjibgxP2Bq1bil/backYiUnCopVcrtnAH1g6uJbrOGBvicQGptN20TLu24N3EtsB2jG3XMdFF/VP3ZbYQPzaKlpGY5KcrfowTO9bJA6u3ToO2NuaxCYMrl20jMYklQFAtuMZzKiEvUnTaZtoeTxGfXs0+ZyL+4Rj9OBajTrA3uS7IXb9RMtETHI9+XMJtjP/MyqwN/li+tDPdKquN8pj+9Jk60QB2py0WcdR9uZpOsVjkokByGxoKtRqRqXsDU6nLS58wtutwZ8qG4xJIVyLC9DB1NtgAwbnHC3jMUk4GCvPHMjZfkEPzn3UIe1NMjjnaBlbb5RZwvR/AGzDDqom7us4YG87DTYwnbpGy+PX6LGN/qh/nvQ8BTTOc1/HAXvba7AJg8tcp1Pct4ssAWMD7R88OOd1HGlv0nTqGC2XN8six/YXztYh4jzXdZywt7h5r5iIX12jZTwmCVeJZ3x08DjPedQB9ta8k2q9tXnjMcngKcVGpEKuMyptb3A6dTPvxlWg9UdyBSiTzEbEeW7rOPApiBU28JdzY8N9+xEUpuazWfCDc1rHAXvbUthA/OoSLTeuAq2P7V8dGx7nOY06GnuTDM4lWsZjEtFKYmxEnOe0jhN9jmJvksE5RMv4emOaJZBsD9GDcxl1gL1tKmwbraJlPCaZZgkUGxXnOcyoGnuTplP7aJmKSb6Z2NA4z2XU0dibNJ3aR8uEb48amZnCRqRCDus4YG/IwzFaRMtETFJnCRo2NM6zX8cBe1OtGxhcEtiy4TFJOHpsZOtEfeTg7NdxWnuTplNbncRjkoYBEGxonGc9o4of02tOpkWB6dQyWsbXGyBL0LB1oh52cLbrOGFvjeC1KhC/WkbLeLsVDpSfgrKhcZ7tOk5rb9DgLC98omKSt8pPwdjwOM921AH2hj2GBhjcczs2NCYJR2rrhrOhcZ7lqAPsDXvMhzA4u2i5eKYYdmzv1T8QyobHeZYHp7c3aHBW0ykRkwwed9WK0MIPzmYdZ7A3sF+0mk6JmKSgUwt/IhX6dBGrdVz0UPx5UDZhcDbRMtFu4RUXvqwUhma3jgMuidmbZHAW0TJ6FShVumduKAdnMaMa7A3e3mERLRMxiQc2m1EH2Js6mRYFplN+tEz4tg82ixnVYG/Q4PjRMhGTeGGzWMcJe0Mm06KAwbGjZSIm8cTGnlGBveHP3Vy3j5aJmMQTG3sdZ7Q3F/MmYhJvbMxRB9ibGrxWVRsc17yJq0C9sXHXccDesMm0KBC/8tisfNuBjbuOA/amBq9Vgfj1M+9ZoJZo1mzMdZzR3iSDY0XLREzikY25jhMxJzqZFrVhGS0TMYlPNt6oIwIlwt7g03VY0TIRk3hl482okbAA6rHSwOA40bJdu+XIxlnHQXsjn0psFS0TMYlnNs46DtgbZd0wfmVEy0RM4puNMaMy7A0YHCNaJmISfcXIZGoaUs3rOIa9SQZn1EkiJgnDVU3140n10ELhzKOOsDdiMi0KxK+maJmKSUZIAmTKgupCFx/mGZVhb5LBmaJlwrfl3X2z8AwP/JLoyaWmgwP2Rj//e5cfLRMxibK6sWND0zzjOg7YG/2aNf50SsUkyurGig2/OM+0jgPXqdD2BgzOFC1T642nrdiIa7wM6ziWvcH4VT+dUjGJdBWQA9vwBr9lUzujwhWeho07neI3yxqUhMFGXLigX8eBS2jx4LUq8Pg4HRsVk+iVhMV2iH/jdOs4lr1JBqeLlqmYRK8kHDbirgjtqMOyN2k61UTLVExiUBIeG24DmWZGFX8Ojb1JBqeJlqmYxKAkLLYO/sgF3cEBe9O9HSFkTadETGJSEiYbagOadRy0N90Lj1jTKX6zrFlJeGz4FaOaUQfIj87egMFpomUqJjEpCY+NuPCQXscx7Q0aHGneVExiVBIuG3r9Gr2OY9pbPp1ODS6JSTZivWFUEiYbfhkUPeoAe6Mn06LAdEqwYc8U4ykJmw29moacUYG9UcFrVcDgiGiZiknMSsJlI2yAWscx7U2aTvFomYxJzErCZ0Nv1aHWceCpJfqX/4jbO4homYpJGErCZiNsAF/Hce1NMjjUvMmrSRhKwmajbAAdddj2BqdT1Lyp9QZHSSzYCBvA1nFAeai94rTED0KjZepqEo6S8NmIy5jRdRywNzp4rUrEr9h0Sl5NwlESGzbCBmKE7ZJpb8Dg0GiZWm+wlMSCjbjVFlvHCXvr6e1Nmk6RFwJTV5OwlMSKDbcBZNQB9qabTIva0EXLREzCVBIbNuI5Xsg6TkxvBnuTplMlWiavJuEpiQ0bcf+Yuo7j2xucTtVombyahKckdmzobUjqOg7am/Ftp3S0TF5NwlQSKzbKBpozKlBUk3UDg1OiZfJqEqaSWLKhN0Uo6zgLe9NNp9TVJFwlsWPLbQA/OHlGBd9L/WRaVB2/Ns1bikngRchcJbFlw22gMaMCe9MFr1WBx8c12MJBuLr6JK/3eV1fP3r06G1e375946LZsQ2vsrpSUJk0o4qVndHeJINrRMvkNpSLZsdWvLpueHX18uX5zc3R0cXDw8PDg4Pj47MzaRoA9mZ+r/Cu5YVPNmXHVvJVJa+O4X8/5+wVpwUMztOzltuwmcrK3qDB+X4T0CzYji3sDbK98f3CNN9sUXQM1j4MNnB7x/6vfun8sg2jh/vgRX1me4P7xSDJPn73+cYcn2zD6PxBBtydYW/w9o6S7u8Vf3Qe2aKrk0zqWwzBa1XyuyWDNHtu4WBzYovyNrLRkTHsDRrc1AuC3zx97TyxRdFZoPRjxsm0KPVCwCTzJCpe2KLocF99zW7POJmWtaVe5ehJVDywDaOb00wdEPrbLLS8pQzUt14n2Zv2otKeLbq6xMi2OB/ISW3GKp0HUWnLFuVzj0oWBxwZAbWHvGO+tai0Y8slJFFHurhvnm2atb6Dfe3aiUobNkpCOJatVrjtW1Tc2UgJYTT/eO1u+RUVZ7boJS4h5pFNUxs9n6LiyJZLCEJmLSFqYaKSOoqKE1sUPcMkhBGPMGpNpXMUFQe2KDro+5MQtQhR+WlNZ802jI72sS/ajrOEqLWK9mHWomLLNhMJUQvrw6xFxY4tGuISYtFfcQvtwxIrUbHaB8xSQtRCJDMXlQ98Oou9aXQQq2S9Pme4diu8D+OLCpdtGF3MXELUwiXzzWeeqPDYminPlGyLOaK5F9aH5aIy9nZ9SdQ5mZeEqIVKZvKD8cHkXGcePUvnKCFqbfYVOpaomO/HiY5785UQpNA+7NQkKga2Iiiev4SohUumQVS0bIuTELWwPizNXulERccW3UMlJJmLhKi1aysqNBsSFAdzlRC1kD5MJyoUWy4halA8bwlRC+3DKFEhnoeHpjzzlxC1cFH5iooKxjaMblAJ4QbFsy2sDytERaXDnona3DVVX7RFSYhau5hkIqKiPl8Zl5Be65THZyF9GCIqzWe1Y7umxUuIWmgfdvpaopPfaUFIyNrCJQQptA+TRAW+Q6blrmnehUmmJCrgnU1oyhPb7JrmXaFeVOr3v+G7ptslIWohfViSxZ8qusm7JNFd0y2UELXQPqwSlfK9tNEhHhTfRglRC+3DclEZr9wbRkd3SkLUWkcksxCVMRUU32IJUQvtw9IfM9o1zbvQPgyTkAWOaO6F5WEKma9d09wL6cPkL9rdkRCkEFERZHdLQtTC+rCy7qCEqIX1YU5XvNzKUvqwOywhasl9WIsrXm5liT7M+7p68TXpw/4XEqJW3octNCiebe3Od0T7DwxBfVt99mM2AAAAAElFTkSuQmCC" 
+            class="brand_logo" alt="Logo">
+					</div>
+				</div>
+				<div class="d-flex justify-content-center form_container">
+					<form #employeeForm="ngForm" (ngSubmit)="loginEmployee()">
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text">
+                  <i class="fas fa-user"></i></span>
+							</div>
+              <!-- <input type="text" name="" 
+              class="form-control input_user" value=""
+               placeholder="username"> -->
+
+               <input required id="name" name="name" 
+               [(ngModel)]="employee.name" placeholder="username"
+                type="text" class="form-control input_user" 
+                #name="ngModel">
+
+						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+              <!-- <input type="password" name=""
+               class="form-control input_pass" value="" placeholder="password"> -->
+
+               <input required id="password" name="password"
+                [(ngModel)]="employee.password" 
+                placeholder="password"
+            type="password" class="form-control input_pass" 
+           #password="ngModel">
+
+
+						</div>
+						<div class="form-group">
+							<div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input"
+                 id="customControlInline">
+                <label class="custom-control-label" 
+                for="customControlInline">Remember me</label>
+							</div>
+						</div>
+							<div class="d-flex justify-content-center mt-3 login_container">
+           <!-- <button type="button" name="button"
+            class="btn login_btn">Login</button> -->
+
+            <button type="submit" class="btn login_btn"
+         [disabled]="employeeForm.invalid">Login</button>
+
+				   </div>
+					</form>
+				</div>
+		
+				<div class="mt-4">
+					<div class="d-flex justify-content-center links">
+            Don't have an account? <a routerLink="edit/0"
+             class="ml-2">Sign Up</a>
+					</div>
+					<div class="d-flex justify-content-center links">
+						<a href="#">Forgot your password?</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

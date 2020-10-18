@@ -1,0 +1,36 @@
+<div class="container">
+    <p class="h2">Welcome to Employee Portal</p>
+    <nav class="navbar navbar-default">
+        <ul class="nav navbar-nav">
+            <li class="active"><a routerLink="list">Home</a></li>
+            <li><a routerLink="edit/0">Create</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a routerLink="login">
+                <span class="glyphicon glyphicon-log-in"></span> Logout</a>
+            </li>
+          </ul>
+    </nav>
+    <div class="lds-roller" *ngIf="showLoadingIndicator">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+<div class="form-group">
+    <input type="text" class="form-control" placeholder="Search By Name" [(ngModel)]="searchTerm" />
+</div>
+<!-- <p>{{ filteredEmployees | json}}</p> -->
+<div *ngFor="let employee of filteredEmployees">
+    <app-display-employee [employee]="employee" [searchTerm]="searchTerm" 
+        (notifyDelete)="onDeleteNotification($event)">
+    </app-display-employee>
+</div>
+<div *ngIf="error">
+    {{ error }}
+</div>
